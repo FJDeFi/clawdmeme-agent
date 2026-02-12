@@ -1,0 +1,225 @@
+{
+  "statusSummary": {
+    "currentDay": "",
+    "daysRemaining": null,
+    "announcement": "",
+    "hasActivePoll": false
+  },
+  "topics": [
+    {
+      "topic": "",
+      "whyNow": "",
+      "originStage": "X",
+      "viralityScore": 0,
+      "memeabilityScore": 0,
+      "longevityScore": 0,
+      "riskScore": 0,
+      "recommendedAngle": "",
+      "nameOptions": ["", "", ""],
+      "tickerOptions": ["", "", "", "", ""],
+      "oneLinerLore": "",
+      "imagePrompt": "",
+      "disclaimer": "",
+      "imageAssetPaths": [],
+      "scoreBreakdown": {
+        "dexMomentum": {
+          "volume24h": null,
+          "liquidity": null,
+          "txns24h": null,
+          "priceChange24hPct": null,
+          "volToLiq": null,
+          "notes": ""
+        },
+        "xSignal": {
+          "hasDirectStatusUrl": false,
+          "statusUrl": "",
+          "accountUrl": "",
+          "communityUrl": "",
+          "signalNotes": ""
+        },
+        "evidenceCompleteness": {
+          "hasMint": false,
+          "hasPumpfunUrl": false,
+          "hasDexScreenerUrl": false,
+          "hasXUrl": false,
+          "notes": ""
+        },
+        "memeShape": {
+          "iconClarity": 0,
+          "templateability": 0,
+          "nameTickerSimplicity": 0,
+          "communityLoops": 0,
+          "notes": ""
+        },
+        "longevity": {
+          "collectiblePotential": 0,
+          "characterEngine": 0,
+          "notEventDependent": 0,
+          "crossPlatformFit": 0,
+          "notes": ""
+        },
+        "risk": {
+          "lowLiquidityRisk": 0,
+          "abnormalVolToLiq": 0,
+          "txnImbalance": 0,
+          "xEvidenceGap": 0,
+          "verificationGap": 0,
+          "safetyIPRisk": 0,
+          "notes": ""
+        },
+        "notes": ""
+      },
+      "evidence": {
+        "mint": "",
+        "pumpfunUrl": "",
+        "dexScreenerUrl": "",
+        "jupiterUrl": "",
+        "xPostUrl": "",
+        "evidenceUrls": [],
+        "metrics": {
+          "views": null,
+          "likes": null,
+          "reposts": null,
+          "replies": null,
+          "volume24h": null,
+          "liquidity": null,
+          "txns24h": null,
+          "priceChange24hPct": null
+        },
+        "xCommunityReview": {
+          "xCommunityReviewed": false,
+          "pinnedSummary": "",
+          "recentPostSummaries": [],
+          "keyMemePatterns": [],
+          "whyInfluential": ""
+        },
+        "verification": {
+          "pumpfunVerified": false,
+          "dexVerified": false,
+          "xMetricsVerified": false,
+          "jupiterVerified": false,
+          "notes": ""
+        }
+      }
+    }
+  ],
+  "bestPick": {
+    "topic": "",
+    "whyNow": "",
+    "originStage": "X",
+    "viralityScore": 0,
+    "memeabilityScore": 0,
+    "longevityScore": 0,
+    "riskScore": 0,
+    "recommendedAngle": "",
+    "nameOptions": ["", "", ""],
+    "tickerOptions": ["", "", "", "", ""],
+    "oneLinerLore": "",
+    "imagePrompt": "",
+    "disclaimer": "",
+    "imageAssetPaths": [],
+    "scoreBreakdown": {
+      "dexMomentum": {
+        "volume24h": null,
+        "liquidity": null,
+        "txns24h": null,
+        "priceChange24hPct": null,
+        "volToLiq": null,
+        "notes": ""
+      },
+      "xSignal": {
+        "hasDirectStatusUrl": false,
+        "statusUrl": "",
+        "accountUrl": "",
+        "communityUrl": "",
+        "signalNotes": ""
+      },
+      "evidenceCompleteness": {
+        "hasMint": false,
+        "hasPumpfunUrl": false,
+        "hasDexScreenerUrl": false,
+        "hasXUrl": false,
+        "notes": ""
+      },
+      "memeShape": {
+        "iconClarity": 0,
+        "templateability": 0,
+        "nameTickerSimplicity": 0,
+        "communityLoops": 0,
+        "notes": ""
+      },
+      "longevity": {
+        "collectiblePotential": 0,
+        "characterEngine": 0,
+        "notEventDependent": 0,
+        "crossPlatformFit": 0,
+        "notes": ""
+      },
+      "risk": {
+        "lowLiquidityRisk": 0,
+        "abnormalVolToLiq": 0,
+        "txnImbalance": 0,
+        "xEvidenceGap": 0,
+        "verificationGap": 0,
+        "safetyIPRisk": 0,
+        "notes": ""
+      },
+      "notes": ""
+    },
+    "evidence": {
+      "mint": "",
+      "pumpfunUrl": "",
+      "dexScreenerUrl": "",
+      "jupiterUrl": "",
+      "xPostUrl": "",
+      "evidenceUrls": [],
+      "metrics": {
+        "views": null,
+        "likes": null,
+        "reposts": null,
+        "replies": null,
+        "volume24h": null,
+        "liquidity": null,
+        "txns24h": null,
+        "priceChange24hPct": null
+      },
+      "xCommunityReview": {
+        "xCommunityReviewed": false,
+        "pinnedSummary": "",
+        "recentPostSummaries": [],
+        "keyMemePatterns": [],
+        "whyInfluential": ""
+      },
+      "verification": {
+        "pumpfunVerified": false,
+        "dexVerified": false,
+        "xMetricsVerified": false,
+        "jupiterVerified": false,
+        "notes": ""
+      }
+    }
+  },
+  "pumpfunMetadata": {
+    "name": "",
+    "symbol": "",
+    "description": "",
+    "imagePrompt": ""
+  },
+  "launchGate": {
+    "ready": false,
+    "requiresHumanConfirmation": true,
+    "confirmPhrase": "CONFIRM_LAUNCH",
+    "readyToLaunchPayload": {
+      "name": "",
+      "symbol": "",
+      "description": "",
+      "imagePrompt": "",
+      "notes": "NO on-chain execution without confirm"
+    }
+  },
+  "forumPostDraft": {
+    "title": "",
+    "body": "",
+    "tags": ["progress-update", "ai", "consumer"]
+  }
+}

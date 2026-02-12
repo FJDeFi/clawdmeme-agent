@@ -1,0 +1,62 @@
+{
+  "statusSummary": {
+    "currentDay": "",
+    "daysRemaining": null,
+    "announcement": "",
+    "hasActivePoll": false
+  },
+  "topics": [
+    {
+    "evidence": {
+    "mint": "",
+    "pumpfunUrl": "",
+    "dexScreenerUrl": "",
+    "xPostUrl": "",
+    "evidenceUrls": [],
+    "verification": {
+    "pumpfunVerified": false,
+    "dexVerified": false,
+    "xMetricsVerified": false,
+    "notes": ""
+    }
+  ],
+  "bestPick": {
+    "topic": "",
+    "whyNow": "",
+    "originStage": "X",
+    "viralityScore": 0,
+    "memeabilityScore": 0,
+    "longevityScore": 0,
+    "riskScore": 0,
+    "recommendedAngle": "",
+    "nameOptions": ["", "", ""],
+    "tickerOptions": ["", "", "", "", ""],
+    "oneLinerLore": "",
+    "imagePrompt": "",
+    "disclaimer": "",
+    "imageAssetPaths": []
+  },
+  "pumpfunMetadata": {
+    "name": "",
+    "symbol": "",
+    "description": "",
+    "imagePrompt": ""
+  },
+  "launchGate": {
+    "ready": true,
+    "requiresHumanConfirmation": true,
+    "confirmPhrase": "CONFIRM_LAUNCH",
+    "readyToLaunchPayload": {
+      "name": "",
+      "symbol": "",
+      "description": "",
+      "imagePrompt": "",
+      "notes": "NO on-chain execution without confirm"
+    }
+  },
+  "forumPostDraft": {
+    "title": "",
+    "body": "",
+    "tags": ["progress-update", "ai", "consumer"]
+  }
+}

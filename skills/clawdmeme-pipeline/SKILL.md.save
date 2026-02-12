@@ -1,0 +1,107 @@
+---
+name: clawdmeme-pipeline
+description: Generate and manage a meme-coin narrative pipeline (trend scan across X→Telegram→dashboards→TikTok, rank topics, brand names/tickers/lore, produce Pump.fun-ready metadata JSON, draft forum ideation/progress posts, and enforce a strict CONFIRM_LAUNCH human-confirmation gate; optionally generate 1:1 mascot/logo images when includeImages=true; never execute on-chain or auto-post).
+---
+
+# Clawdmeme Pipeline
+
+Follow this skill when the user asks for any of:
+- A daily scan of meme narratives and a single best pick
+- Branding a topic into names/tickers/lore + image prompts
+- A Pump.fun launch *package* (but not executing it)
+- A concise forum ideation/progress-update draft
+- A CONFIRM_LAUNCH-gated “next commands/payload” plan (never execute)
+
+## Non-negotiable rules
+
+- Output **STRICT JSON only** (no markdown, no commentary).
+- Never execute on-chain actions.
+- Never auto-post anywhere unless the user explicitly approves.
+- Never print secrets. If a key is required, refer to it by env var name only.
+  - Read `COLOSSEUM_API_KEY` from environment if needed; never echo it.
+- Only provide launch steps when (and only when) the user’s message is exactly: `CONFIRM_LAUNCH`.
+
+## Inputs
+
+Assume plain text by default.
+
+Optionally, the user may provide:
+- Config JSON: `{ "mode":"daily"|"one-shot", "nTopics":10, "language":"en"|"zh", "riskTolerance":"low"|"medium"|"high", "postToForum":true|false, "includeImages":true|false }`
+- Links (X threads, DEX Screener/Moonshot, Pump.fun, TikTok). Use them as evidence hints, but do not claim verification you didn’t do.
+
+## Topic lifecycle model (must be explicit)
+
+Model narratives as a lifecycle and cite where each candidate sits:
+1) **X ignition** → 2) **TG coordination** → 3) **Dashboard convergence** → 4) **TikTok expansion**
+
+Represent this in each candidate’s `originStage` and in the `whyNow` evidence hints.
+
+## Safety + quality constraints
+
+- Avoid deceptive financial language: no guaranteed profit, no “pump”, no insider/inside-info claims.
+- Avoid copyrighted characters/logos and brand impersonation.
+- Prefer simple, remixable mascots/slogans (template-friendly).
+- Deduplicate near-identical topics, names, and tickers.
+- Treat rug/bot risk as default; include a short risk disclaimer per candidate.
+- Keep descriptions neutral and non-misleading.
+
+## Updated scan objective (prioritize these content shapes)
+
+When ranking candidates for `viralityScore` and `memeabilityScore`, strongly prefer:
+- **Iconic mascot / avatar-level icon** (strong silhouette; recognizable at a glance)
+- **Pixel-art / sprite / sticker-like visuals** (easy to collect/remix)
+- **Collectible / episodic “set”** (pack/series potential; multiple variations)
+- **Caption-this / templateable format** (low-context; high remix rate)
+
+Translate these into your internal scoring heuristics even if you cannot fully verify metrics.
+
+## Output format (single JSON object)
+
+Return exactly one JSON object matching the template in `references/output-template.json`.
+
+### Required top-level keys
+
+- `statusSummary`
+- `topics`
+- `bestPick`
+- `pumpfunMetadata`
+- `launchGate`
+- `forumPostDraft`
+
+### Topic candidate schema (required fields)
+
+Each item in `topics[]` must include:
+- `topic`
+- `whyNow` (evidence hints; short)
+- `originStage` (one of: `X` | `TG` | `Dashboard` | `TikTok`)
+- `viralityScore` (0-100)
+- `memeabilityScore` (0-100)
+- `longevityScore` (0-100)
+- `riskScore` (0-100; higher = riskier)
+- `recommendedAngle` (how to frame it, neutral)
+- `nameOptions` (array of 3)
+- `tickerOptions` (array of 5; each 2–6 chars; deduped)
+- `oneLinerLore`
+- `imagePrompt` (1:1 mascot/logo prompt, safe, no copyrighted refs)
+- `disclaimer` (1–2 sentences)
+
+### Mode mapping
+
+Interpret the user request and fill the JSON accordingly:
+
+- **Daily scan (A)**: populate `topics` with up to `nTopics` ranked narratives; set `bestPick` to the top candidate; populate `pumpfunMetadata` derived from `bestPick`.
+- **Brand this topic (B)**: set `topics` to a single candidate; `bestPick` mirrors it; fill `pumpfunMetadata`.
+- **Launch package (C)**: include `pumpfunMetadata`, `forumPostDraft`, and a `launchGate.readyToLaunchPayload` (instructions/payload only; no execution).
+- **Forum post only (D)**: still return full JSON, but keep `topics` minimal; focus content in `forumPostDraft` and set `postToForum` intent via wording only.
+- **CONFIRM_LAUNCH (E)**: only then populate `launchGate.readyToLaunchPayload` with the exact next commands/payload to run (Pump.fun + AgentWallet), but never run them.
+
+## Optional images (includeImages=true)
+
+If `includeImages=true`, generate an additional, safe 1:1 mascot/logo image using the **openai-image-gen** skill and return the **local file path(s)** inside:
+- `bestPick.imageAssetPaths` (array of strings)
+
+Do not embed base64.
+
+## Minimalism
+
+Keep text fields concise. Prefer short, structured sentences over long paragraphs.
